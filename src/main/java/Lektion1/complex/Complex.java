@@ -59,41 +59,41 @@ public class Complex implements IComplex{
     }
 
     // return a new Lektion1.complex.Complex object whose value is (this + b)
-    public Complex plus(Complex b) {
+    public IComplex plus(IComplex b) {
         Complex a = this;             // invoking object
-        double real = a.re + b.re;
-        double imag = a.im + b.im;
+        double real = a.re + ((Complex)b).re;
+        double imag = a.im + ((Complex)b).im;
         return new Complex(real, imag);
     }
 
     // return a new Lektion1.complex.Complex object whose value is (this - b)
-    public Complex minus(Complex b) {
+    public IComplex minus(IComplex b) {
         Complex a = this;
-        double real = a.re - b.re;
-        double imag = a.im - b.im;
+        double real = a.re - ((Complex)b).re;
+        double imag = a.im - ((Complex)b).im;
         return new Complex(real, imag);
     }
 
     // return a new Lektion1.complex.Complex object whose value is (this * b)
-    public Complex times(Complex b) {
+    public IComplex times(IComplex b) {
         Complex a = this;
-        double real = a.re * b.re - a.im * b.im;
-        double imag = a.re * b.im + a.im * b.re;
+        double real = a.re * ((Complex)b).re - a.im * ((Complex)b).im;
+        double imag = a.re * ((Complex)b).im + a.im * ((Complex)b).re;
         return new Complex(real, imag);
     }
 
     // return a new object whose value is (this * alpha)
-    public Complex scale(double alpha) {
+    public IComplex scale(double alpha) {
         return new Complex(alpha * re, alpha * im);
     }
 
     // return a new Lektion1.complex.Complex object whose value is the conjugate of this
-    public Complex conjugate() {
+    public IComplex conjugate() {
         return new Complex(re, -im);
     }
 
     // return a new Lektion1.complex.Complex object whose value is the reciprocal of this
-    public Complex reciprocal() {
+    public IComplex reciprocal() {
         double scale = re*re + im*im;
         return new Complex(re / scale, -im / scale);
     }
@@ -103,9 +103,9 @@ public class Complex implements IComplex{
     public double im() { return im; }
 
     // return a / b
-    public Complex divides(Complex b) {
+    public IComplex divides(IComplex b) {
         Complex a = this;
-        return a.times(b.reciprocal());
+        return a.times(((Complex)b).reciprocal());
     }
 
     // return a new Lektion1.complex.Complex object whose value is the complex exponential of this
@@ -124,7 +124,7 @@ public class Complex implements IComplex{
     }
 
     // return a new Lektion1.complex.Complex object whose value is the complex tangent of this
-    public Complex tan() {
+    public IComplex tan() {
         return sin().divides(cos());
     }
     
