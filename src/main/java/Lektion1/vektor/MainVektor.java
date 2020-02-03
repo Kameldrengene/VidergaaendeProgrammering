@@ -6,11 +6,11 @@ public class MainVektor {
         Vektor bVek = new Vektor(6,5);
         Vektor cVek = new Vektor(8,7);
         System.out.println(aVek.toString());
-        aVek.add(bVek);
+        aVek = (Vektor) aVek.add(bVek);
         System.out.println(aVek.toString());
         System.out.println(aVek.equals(bVek));
         System.out.println(aVek.equals(cVek));
-        aVek.times(2);
+        aVek = (Vektor) aVek.times(2);
         System.out.println(aVek.toString());
     }
 }

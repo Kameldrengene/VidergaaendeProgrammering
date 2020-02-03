@@ -1,30 +1,42 @@
 package Lektion1.vektor;
 
-public class Vektor implements IVektor {
-    private int a,b;
+public class Vektor implements IVektor, Comparable<IVector>{
+    private final int a, b;
 
-    public Vektor(int a, int b){
+    public Vektor(int a, int b) {
         this.a = a;
         this.b = b;
     }
-    public String toString(){
-        return "a: " + a + " b: " + b;
+
+    public String toString() {
+        return "(" + this.a + "," + this.b+")";
     }
-    public void times(int x){
-        a=a*x;
-        b=b*x;
+
+    public IVektor times(int times) {
+        int x, y;
+        x = this.a * times;
+        y = this.b * times;
+        IVektor temp = new Vektor(x, y);
+        return (IVektor) temp;
     }
-    public void add(IVektor vek_a){
-        a+=((Vektor)vek_a).getA();
-        b+=((Vektor)vek_a).getB();
+
+    public IVektor add(IVektor v) {
+        int x, y;
+        x = this.a + ((Vektor) v).getA();
+        y = this.b + ((Vektor) v).getB();
+        IVektor temp = new Vektor(x, y);
+        return (IVektor) temp;
     }
-    public boolean equals(IVektor vek_a){
-        return (vek_a.toString().equals(this.toString()));
+
+    public boolean equals(IVektor v) {
+        return (this.a == ((Vektor)v).getA() && this.b == ((Vektor)v).getB());
     }
-    public int getA(){
+
+    public int getA() {
         return a;
     }
-    public int getB(){
+
+    public int getB() {
         return b;
     }
 }
