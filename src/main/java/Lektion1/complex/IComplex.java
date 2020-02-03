@@ -1,4 +1,4 @@
-package Lektion1;
+package Lektion1.complex;
 
 public interface IComplex {
     String toString();
