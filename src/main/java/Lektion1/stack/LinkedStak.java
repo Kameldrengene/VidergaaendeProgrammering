@@ -1,16 +1,16 @@
 package Lektion1.stack;
 
 public class LinkedStak implements Stak{
-    Object ptr;
+    Item ptr;
     public LinkedStak(){
     ptr = null;
     }
 
     public void push(String e){
         if(ptr == null){
-            ptr = new Object(e,null);
+            ptr = new Item(e,null);
         }else{
-            ptr = new Object(e,ptr);
+            ptr = new Item(e,ptr);
         }
     }
     public String pop(){
@@ -30,7 +30,7 @@ public class LinkedStak implements Stak{
             System.out.println("---End---");
             return;
         }
-        Object temp = ptr;
+        Item temp = ptr;
         while (temp.ptr != null){
             System.out.println(temp.input);
             temp=temp.ptr;
