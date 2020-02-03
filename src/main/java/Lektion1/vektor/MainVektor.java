@@ -1,0 +1,16 @@
+package Lektion1.vektor;
+
+public class MainVektor {
+    public static void main(String[] args) {
+        Vektor aVek = new Vektor(2,2);
+        Vektor bVek = new Vektor(6,5);
+        Vektor cVek = new Vektor(8,7);
+        System.out.println(aVek.toString());
+        aVek.add(bVek);
+        System.out.println(aVek.toString());
+        System.out.println(aVek.equals(bVek));
+        System.out.println(aVek.equals(cVek));
+        aVek.times(2);
+        System.out.println(aVek.toString());
+    }
+}
