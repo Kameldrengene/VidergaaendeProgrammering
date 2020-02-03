@@ -1,4 +1,4 @@
-package Lektion1.stack;
+package main.java.Lektion1.stack;
 
 public class LinkedStak implements Stak{
     public void push(String e){

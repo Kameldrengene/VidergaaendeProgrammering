@@ -1,4 +1,4 @@
-package Lektion1.stack;
+package main.java.Lektion1.stack;
 
 interface Stak {
     void push(String e);
