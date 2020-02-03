@@ -1,23 +1,23 @@
 package Lektion1;
 
-interface IComplex {
+public interface IComplex {
     String toString();
     double abs();
     double phase();
-    Complex plus(Complex b);
-    Complex minus(Complex b);
-    Complex times(Complex b);
-    Complex scale(double alpha);
-    Complex conjugate();
-    Complex reciprocal();
-    public double re();
-    public double im();
-    Complex divides(Complex b);
-    Complex exp();
-    Complex sin();
-    Complex cos();
-    Complex tan();
-    //Complex plus(Complex a, Complex b);
+    IComplex plus(IComplex b);
+    IComplex minus(IComplex b);
+    IComplex times(IComplex b);
+    IComplex scale(double alpha);
+    IComplex conjugate();
+    IComplex reciprocal();
+    double re();
+    double im();
+    IComplex divides(IComplex b);
+    IComplex exp();
+    IComplex sin();
+    IComplex cos();
+    IComplex tan();
+    //IComplex plus(IComplex a, IComplex b);
     boolean equals(Object x);
     int hashCode();
 
