@@ -65,6 +65,16 @@ public class Vektor implements IVektor, Comparable<Vektor> {
             return 0;
     }
 
+    /*
+       |
+       |
+       |
+       | Main metoden
+       |
+       |
+       |
+       |
+        */
     public static void main(String[] args){
         IVektor a = new Vektor(10,3);
         IVektor b = new Vektor(2,5);
@@ -75,12 +85,16 @@ public class Vektor implements IVektor, Comparable<Vektor> {
         vektorer[3] = new Vektor(-5,-7);
         vektorer[4] = new Vektor(1,0);
 
-
-
-
-
-
-
+        /*
+        |
+        |
+        |
+        | Udskrift af resultater
+        |
+        |
+        |
+        |
+         */
         System.out.println("times metoden");
         System.out.println(a.times(2));
         System.out.println("");
