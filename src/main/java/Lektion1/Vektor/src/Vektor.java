@@ -1,6 +1,10 @@
+package Lektion1.Vektor.src;
+
+import Lektion1.Vektor.src.IVektor;
+
 import java.util.Arrays;
 
-public class Vektor implements IVektor , Comparable<Vektor> {
+public class Vektor implements IVektor, Comparable<Vektor> {
 
     final private int a;
     final private int b;

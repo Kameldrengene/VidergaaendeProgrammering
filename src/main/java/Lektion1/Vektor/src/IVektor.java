@@ -1,3 +1,5 @@
+package Lektion1.Vektor.src;
+
 public interface IVektor {
     String toString();
     IVektor times(int x);
