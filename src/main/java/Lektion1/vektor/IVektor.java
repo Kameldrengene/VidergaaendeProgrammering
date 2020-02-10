@@ -5,4 +5,6 @@ interface IVektor {
     IVektor times(int x);
     IVektor add(IVektor v);
     boolean equals(IVektor v);
+    int getX();
+    int getY();
 }
