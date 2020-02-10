@@ -1,4 +1,4 @@
-package Lektion1.Vektor.src;
+package Lektion1.vektor.src;
 
 import Lektion1.Vektor.src.IVektor;
 
