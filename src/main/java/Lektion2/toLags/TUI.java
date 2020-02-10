@@ -1,6 +1,4 @@
-package Lektion2;
-
-import javafx.scene.SnapshotParameters;
+package Lektion2.toLags;
 
 import java.util.Scanner;
 
@@ -53,7 +51,7 @@ public class TUI implements IUI {
         Scanner input = new Scanner(System.in);
         System.out.println("Type ID to show ingredient");
         int id = input.nextInt();
-        System.out.println(data.getAllIngredients()[id]);
+        System.out.println(data.getIngredientName(id) + " " + data.getIngredientAmount(id) + " gram");
     }
 
     @Override

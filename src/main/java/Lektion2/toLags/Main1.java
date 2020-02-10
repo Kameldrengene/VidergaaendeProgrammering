@@ -1,4 +1,4 @@
-package Lektion2;
+package Lektion2.toLags;
 
 public class Main1 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Lektion2;
+package Lektion2.toLags;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,34 +7,52 @@ public class DemoData implements IData {
     @Override
     public String[] getAllIngredients() {
         String[] ingredientList = new String[ingredients.size()];
-        for(int i = 0; i < ingredients.size();i++) ingredientList[i] = ingredients.get(i).toString();
+        for (int i = 0; i < ingredients.size(); i++) ingredientList[i] = ingredients.get(i).toString();
         return ingredientList;
     }
 
     @Override
     public String getIngredientName(int id) {
-        return ingredients.get(id).name;
+        for (Ingredient i : ingredients) {
+            if (i.id == id) {
+                return i.name;
+            }
+        }
+        return null;
     }
 
     @Override
     public int getIngredientAmount(int id) {
-        return ingredients.get(id).amount;
+        for (Ingredient i : ingredients) {
+            if (i.id == id) {
+                return i.amount;
+            }
+        }
+        return 0;
     }
 
     @Override
     public void setIngredientName(int id, String name) {
-        ingredients.set(id,new Ingredient(id,name,getIngredientAmount(id)));
+        for (Ingredient i : ingredients) {
+            if (i.id == id) {
+                i.name = name;
+            }
+        }
 
     }
 
     @Override
     public void setIngredientAmount(int id, int amount) {
-        ingredients.set(id,new Ingredient(id,getIngredientName(id),amount));
+        for (Ingredient i : ingredients) {
+            if (i.id == id) {
+                i.amount = amount;
+            }
+        }
     }
 
     @Override
     public void createIngredient(int id, String name, int amount) {
-        ingredients.add(new Ingredient(id,name,amount));
+        ingredients.add(new Ingredient(id, name, amount));
 
     }
 
@@ -51,7 +69,7 @@ public class DemoData implements IData {
 
         @Override
         public String toString() {
-            return (this.id + ", " + this.name + ", " +this.amount);
+            return ("ID: " + this.id + ", " + this.name + ", " + this.amount + " gram");
         }
     }
 
