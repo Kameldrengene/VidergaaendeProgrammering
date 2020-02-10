@@ -26,7 +26,6 @@ public class TUI {
 
     private String getCPR(){
         Scanner input = new Scanner(System.in);
-        System.out.println("Indtast CPR nummer");
         String cpr = input.nextLine();
         return cpr;
     }
