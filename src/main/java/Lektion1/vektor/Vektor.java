@@ -1,42 +1,52 @@
 package Lektion1.vektor;
 
-public class Vektor implements IVektor, Comparable<IVector>{
-    private final int a, b;
+public class Vektor implements IVektor, Comparable<IVektor>{
+    private final int x, y;
 
-    public Vektor(int a, int b) {
-        this.a = a;
-        this.b = b;
+    public Vektor(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public String toString() {
-        return "(" + this.a + "," + this.b+")";
+        return "(" + this.x + "," + this.y +")";
     }
 
     public IVektor times(int times) {
         int x, y;
-        x = this.a * times;
-        y = this.b * times;
+        x = this.x * times;
+        y = this.y * times;
         IVektor temp = new Vektor(x, y);
         return (IVektor) temp;
     }
 
     public IVektor add(IVektor v) {
         int x, y;
-        x = this.a + ((Vektor) v).getA();
-        y = this.b + ((Vektor) v).getB();
+        x = this.x + ((Vektor) v).getX();
+        y = this.y + ((Vektor) v).getY();
         IVektor temp = new Vektor(x, y);
         return (IVektor) temp;
     }
 
     public boolean equals(IVektor v) {
-        return (this.a == ((Vektor)v).getA() && this.b == ((Vektor)v).getB());
+        return (this.x == ((Vektor)v).getX() && this.y == ((Vektor)v).getY());
     }
 
-    public int getA() {
-        return a;
+    public int getX() {
+        return x;
     }
 
-    public int getB() {
-        return b;
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public int compareTo(IVektor v) {
+
+        double thisLength = Math.sqrt(Math.pow(this.x,2) + Math.pow(this.y,2));
+
+        double vLength = Math.sqrt(Math.pow(v.getX(),2) + Math.pow(v.getY(),2));
+
+        return Double.compare(thisLength, vLength);
     }
 }
