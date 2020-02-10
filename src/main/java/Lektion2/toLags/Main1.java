@@ -1,5 +1,10 @@
 package Lektion2.toLags;
 
+import Lektion2.toLags.Data.DemoData;
+import Lektion2.toLags.Data.IData;
+import Lektion2.toLags.UI.IUI;
+import Lektion2.toLags.UI.TUI;
+
 public class Main1 {
     public static void main(String[] args) {
         IData data = new DemoData();
