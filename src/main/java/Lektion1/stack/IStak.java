@@ -1,6 +1,6 @@
 package Lektion1.stack;
 
-interface Stak {
+interface IStak {
     void push(String e);
     String pop();
     boolean isEmpty();

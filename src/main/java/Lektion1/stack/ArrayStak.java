@@ -1,6 +1,6 @@
 package Lektion1.stack;
 
-public class ArrayStak implements Stak {
+public class ArrayStak implements IStak {
 
     private String arrayStak[];
     private int top;

@@ -1,6 +1,6 @@
 package Lektion1.stack;
 
-public class LinkedStak implements Stak{
+public class LinkedStak implements IStak {
     Item ptr;
     public LinkedStak(){
     ptr = null;
