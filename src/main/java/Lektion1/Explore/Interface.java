@@ -6,10 +6,4 @@ public interface Interface {
     
     int tal();
     
-    default int test(){
-        return 1;
-    }
-    
-    
-    
 }
