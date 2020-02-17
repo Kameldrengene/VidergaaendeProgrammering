@@ -1,4 +1,5 @@
-package Lektion2.toLags;
+package Lektion3.toLags.Data;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,42 +13,44 @@ public class DemoData implements IData {
     }
 
     @Override
-    public String getIngredientName(int id) {
+    public String getIngredientName(int id) throws IngredientNotFoundException {
         for (Ingredient i : ingredients) {
             if (i.id == id) {
                 return i.name;
             }
         }
-        return null;
+        throw new IngredientNotFoundException();
     }
 
     @Override
-    public int getIngredientAmount(int id) {
+    public int getIngredientAmount(int id) throws IngredientNotFoundException {
         for (Ingredient i : ingredients) {
             if (i.id == id) {
                 return i.amount;
             }
         }
-        return 0;
+        throw new IngredientNotFoundException();
     }
 
     @Override
-    public void setIngredientName(int id, String name) {
+    public void setIngredientName(int id, String name) throws IngredientNotFoundException {
         for (Ingredient i : ingredients) {
             if (i.id == id) {
                 i.name = name;
             }
+            throw new IngredientNotFoundException();
         }
 
     }
 
     @Override
-    public void setIngredientAmount(int id, int amount) {
+    public void setIngredientAmount(int id, int amount) throws IngredientNotFoundException {
         for (Ingredient i : ingredients) {
             if (i.id == id) {
                 i.amount = amount;
             }
         }
+        throw new IngredientNotFoundException();
     }
 
     @Override

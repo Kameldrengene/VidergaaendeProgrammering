@@ -1,4 +1,4 @@
-package Lektion2.toLags;
+package Lektion3.toLags.UI;
 
 public interface IUI {
     void showMenu(); //viser menu med valgmuligheder

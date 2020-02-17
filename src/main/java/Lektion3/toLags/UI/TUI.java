@@ -1,4 +1,6 @@
-package Lektion2.toLags;
+package Lektion3.toLags.UI;
+
+import Lektion3.toLags.Data.IData;
 
 import java.util.Scanner;
 
@@ -51,7 +53,11 @@ public class TUI implements IUI {
         Scanner input = new Scanner(System.in);
         System.out.println("Type ID to show ingredient");
         int id = input.nextInt();
-        System.out.println(data.getIngredientName(id) + " " + data.getIngredientAmount(id) + " gram");
+        try {
+            System.out.println(data.getIngredientName(id) + " " + data.getIngredientAmount(id) + " gram");
+        } catch (IData.IngredientNotFoundException e) {
+            System.out.println(id + " isn't in the system");
+        }
     }
 
     @Override
@@ -60,11 +66,16 @@ public class TUI implements IUI {
         System.out.println("ID then Amount");
         int id = input.nextInt();
         int amount = input.nextInt();
-        data.setIngredientAmount(id, amount);
-        System.out.println("Enter new name");
-        input.nextLine();
-        String name = input.nextLine();
-        data.setIngredientName(id, name);
+        try {
+            data.setIngredientAmount(id, amount);
+            System.out.println("Enter new name");
+            input.nextLine();
+            String name = input.nextLine();
+            data.setIngredientName(id, name);
+        } catch (IData.IngredientNotFoundException e) {
+            System.out.println(id + " isn't in the system");
+        }
+
     }
 
     @Override

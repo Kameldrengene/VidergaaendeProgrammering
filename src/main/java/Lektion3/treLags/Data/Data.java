@@ -34,7 +34,7 @@ public class Data implements IData
 //    men blot gennemløber arrayelementerne i en uendelig while løkke indtil enten det pågældende element findes,
 //    eller der kastes en IndexOutOfBoundsException.
 //    Kastes en IndexOutOfBoundsException skal den tilhørende catch-blok returnere null for en String returtype og -1.0 for en double returtype.
-    
+
 
     public String getNavn(String cpr) throws DataException {
         int i = 0;
