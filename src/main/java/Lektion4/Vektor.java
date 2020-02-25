@@ -1,8 +1,9 @@
-package Lektion1.Vektor.src;
+package Lektion4;
 
-import Lektion1.Vektor.src.IVektor;
-
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class Vektor implements IVektor, Comparable<Vektor> {
 
@@ -78,12 +79,14 @@ public class Vektor implements IVektor, Comparable<Vektor> {
     public static void main(String[] args){
         IVektor a = new Vektor(10,3);
         IVektor b = new Vektor(2,5);
-        IVektor[] vektorer = new IVektor[5];
-        vektorer[0] = new Vektor(3,4);
-        vektorer[1] = new Vektor(6,7);
-        vektorer[2] = new Vektor(10,11);
-        vektorer[3] = new Vektor(-5,-7);
-        vektorer[4] = new Vektor(1,0);
+
+        List<Vektor> vektorer = new ArrayList<>();
+        vektorer.add(new Vektor(3,4));
+        vektorer.add(new Vektor(6,7));
+        vektorer.add(new Vektor(10,11));
+        vektorer.add(new Vektor(-5,-7));
+        vektorer.add(new Vektor(1,0));
+
 
         /*
         |
@@ -114,16 +117,16 @@ public class Vektor implements IVektor, Comparable<Vektor> {
         System.out.println("");
 
         System.out.println("Array før sort");
-        for (int i = 0; i < vektorer.length ; i++) {
-            System.out.println(vektorer[i]);
+        for (int i = 0; i < vektorer.size() ; i++) {
+            System.out.println(vektorer.get(i));
         }
 
-        Arrays.sort(vektorer);
+        Collections.sort(vektorer);
         System.out.println("");
 
         System.out.println("Array efter sort(sorterer hensyn til længden");
-        for (int i = 0; i < vektorer.length ; i++) {
-            System.out.println(vektorer[i]);
+        for (int i = 0; i < vektorer.size() ; i++) {
+            System.out.println(vektorer.get(i));
         }
 
 
