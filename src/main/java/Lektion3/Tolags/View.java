@@ -1,5 +1,6 @@
 package Lektion3.Tolags;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class View implements IView {
@@ -16,21 +17,32 @@ public class View implements IView {
     
         int choice = showCustomMenu("Choose item: ", new String[]{"showIngredients", "showIngredient", "changeIngredient", "createIngredient"});
         
-        switch (choice){
-            case 0:
-                showIngredients();
-                break;
-            case 1:
-                showIngredient();
-                break;
-            case 2:
-                changeIngredient();
-                break;
-            case 3:
-                createIngredient();
-                break;
-                
+        try{
+            switch (choice){
+                case 0:
+                    showIngredients();
+                    break;
+                case 1:
+                    showIngredient();
+                    break;
+                case 2:
+                    changeIngredient();
+                    break;
+                case 3:
+                    createIngredient();
+                    break;
+        
+            }
+        } catch(IData.IngredientNotFoundException e){
+            System.out.println("Ingredient not found");
+        }catch (InputMismatchException e){
+            System.out.println("Input mismatch");
         }
+        catch (IndexOutOfBoundsException e){
+            System.out.println("IndexOutOfBounds");
+        }
+        
+     
         System.out.println();
     }
     
@@ -47,7 +59,7 @@ public class View implements IView {
     }
     
     @Override
-    public void showIngredient() {
+    public void showIngredient() throws IData.IngredientNotFoundException{
         
         int id = pickId();
     
@@ -58,7 +70,7 @@ public class View implements IView {
     }
     
     @Override
-    public void changeIngredient() {
+    public void changeIngredient() throws IData.IngredientNotFoundException{
         
         //lader brugeren vælge ingrediens ud fra id, dernæst vælge et felt og så indtaste en ny værdi for denne
         int id = pickId();
@@ -72,14 +84,15 @@ public class View implements IView {
                 break;
             case 1:
                 System.out.println("\nType Amount: ");
-                data.setIngredientAmount(id, scan.nextInt());
+                int amount = scan.nextInt();
+                data.setIngredientAmount(id, amount);
                 scan.nextLine();
                 break;
         }
     }
     
     @Override
-    public void createIngredient() {
+    public void createIngredient() throws InputMismatchException{
     
         System.out.println("\nType ID: ");
         int id = scan.nextInt();
@@ -115,16 +128,17 @@ public class View implements IView {
         
         String[] ingredients = data.getAllIngredients();
         String[] menuItems = new String[ingredients.length];
-    
+        
         for (int i = 0; i < ingredients.length; i++) {
             String id = ingredients[i].split(",")[0];
             menuItems[i] = id;
         }
-    
+
         System.out.println("");
         int choice = showCustomMenu("Choose ID: ", menuItems);
-        
+    
         return Integer.parseInt(menuItems[choice]);
+        
     }
     
 }

@@ -48,9 +48,9 @@ public class DemoData implements IData {
     
     public DemoData() {
         ingredients = new ArrayList<>();
-        ingredients.add(new Ingredient(1, "flormelis", 60));
-        ingredients.add(new Ingredient(2, "mel", 240));
-        ingredients.add(new Ingredient(3, "smør", 185));
+        ingredients.add(new Ingredient(60, "flormelis", 60));
+        ingredients.add(new Ingredient(44, "mel", 240));
+        ingredients.add(new Ingredient(15, "smør", 185));
         size = ingredients.size();
         
     }
@@ -68,7 +68,7 @@ public class DemoData implements IData {
     }
     
     @Override
-    public String getIngredientName(int id) {
+    public String getIngredientName(int id) throws IngredientNotFoundException{
         
         int index  = findIndex(id);
         return ingredients.get(index).getName();
@@ -76,7 +76,7 @@ public class DemoData implements IData {
     }
     
     @Override
-    public int getIngredientAmount(int id) {
+    public int getIngredientAmount(int id) throws IngredientNotFoundException{
     
         int index  = findIndex(id);
         return ingredients.get(index).getAmount();
@@ -84,7 +84,7 @@ public class DemoData implements IData {
     }
     
     @Override
-    public void setIngredientName(int id, String name) {
+    public void setIngredientName(int id, String name) throws IngredientNotFoundException{
     
         int index  = findIndex(id);
         ingredients.get(index).setName(name);
@@ -92,7 +92,7 @@ public class DemoData implements IData {
     }
     
     @Override
-    public void setIngredientAmount(int id, int amount) {
+    public void setIngredientAmount(int id, int amount) throws IngredientNotFoundException{
     
         int index  = findIndex(id);
         ingredients.get(index).setAmount(amount);
@@ -107,7 +107,7 @@ public class DemoData implements IData {
     
     }
     
-    private int findIndex(int id){
+    private int findIndex(int id) throws IngredientNotFoundException{
         
         int out = -1;
         
@@ -117,6 +117,8 @@ public class DemoData implements IData {
                 break;
             }
         }
+        
+        if(out == -1) throw new IngredientNotFoundException();
         
         return out;
     }
