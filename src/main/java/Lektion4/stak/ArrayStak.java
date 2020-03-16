@@ -1,9 +1,8 @@
 package Lektion4.stak;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Stack;
+
 
 public class ArrayStak<E> implements Stak<E> {
 
