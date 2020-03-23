@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>opret bruger</title>
+    <link rel="stylesheet" type="text/css" href="OpretBruger.css">
 </head>
 <body>
-<h1>Make new User</h1>
+<div class="header"><h2>User Registration</h2></div>
+
+<div class="actual">
+<h1>Create User</h1>
 User Id:
 <form action="BrugerAdministration.html" method="get">
     User name:
@@ -15,19 +19,17 @@ User Id:
     Last name:
     <input type="text" name="Last name"><br>
     Rolls
-    <input type="checkbox" name="Administrator">
+    <input class="roll" type="checkbox" name="Administrator">
     <label>Administrator</label>
-    <input type="checkbox" name="User">
+    <input class="admin" type="checkbox" name="admin">
     <label>User</label><br>
     Active
     <input type="radio" id="yes" name="check" value="yes">
     <label for="yes">Yes</label>
     <input type="radio" id="No" name="check" value="No">
     <label for="No">No</label><br>
-    <p><input type="submit" value="Save Changes"></p>
-
+    <input class="button" type="submit" value="Save Changes">
 </form>
-
-Fig. 3: Brugerredigerings-side.
+</div>
 </body>
 </html>

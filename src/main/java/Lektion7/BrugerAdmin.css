@@ -1,0 +1,14 @@
+body{
+    font-family: "Bookman Old Style";
+}
+h1{
+    text-align: center;
+}
+h3{
+    color: #626869;
+}
+table{
+    border-style: outset;
+    border: 2px solid #89898b;
+
+}

@@ -1,0 +1,41 @@
+body{
+    font-family: "Bookman Old Style";
+}
+h1{
+    font-weight: bold;
+    font-size: medium;
+}
+.header{
+}
+.actual{
+    border-style: solid;
+    border-color: #626869;
+    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 30px;
+    text-align: center;
+}
+input{
+    font-family: Corbel;
+    border-radius: 4px;
+    height: 25px;
+    outline: none;
+    border: 1px solid #dddddd;
+    background: #f9f9f9;
+    transition: background 0.25s, color 0.25s;
+}
+.roll{
+    margin-top: 20px;
+}
+.button{
+    background-color: aquamarine;
+    color: darkslategrey;
+    font-weight: bold;
+    height: 2em;
+    border-radius: 16px;
+    margin-top: 20px;
+}
