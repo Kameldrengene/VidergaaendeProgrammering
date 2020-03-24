@@ -1,18 +1,25 @@
-
+body{
+    background: url(https://www.pptgrounds.com/wp-content/uploads/2018/05/Red-Business-PPT-Backgrounds-1000x750.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 .pic{
     margin-top: 100px;
-    margin-bottom: 0px;
-    margin-right: 150px;
-    margin-left: 580px;
+    margin-bottom: -110px;
+    margin-right: 200px;
+    margin-left: 650px;
 }
 .center{
+    background-color: #f9f9f9;
     border-style: outset;
     border-radius: 15px;
     width: 500px;
     margin-top: -60px;
     margin-bottom: 10px;
-    margin-right: 150px;
-    margin-left: 580px;
+    margin-right: 200px;
+    margin-left: 650px;
 
 }
 

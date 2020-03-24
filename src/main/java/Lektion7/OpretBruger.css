@@ -1,5 +1,10 @@
 body{
     font-family: "Bookman Old Style";
+    background: url(https://i.pinimg.com/originals/71/bb/56/71bb5610f583afa613bf6de7c16d05d6.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 h1{
     font-weight: bold;
@@ -8,6 +13,7 @@ h1{
 .header{
 }
 .actual{
+    background: #f9f9f9;
     border-style: solid;
     border-color: #626869;
     border-radius: 15px;

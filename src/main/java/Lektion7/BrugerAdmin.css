@@ -1,5 +1,10 @@
 body{
     font-family: "Bookman Old Style";
+    background: url(https://www.jakpost.travel/imgfiles/full/9/98034/hd-wallpaper-website.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 h1{
     text-align: center;
@@ -7,8 +12,12 @@ h1{
 h3{
     color: #626869;
 }
-table{
-    border-style: outset;
-    border: 2px solid #89898b;
-
+.border-wrap {
+    max-width: content-box;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to right, red, purple);
+    padding: 3px;
 }
+
+
