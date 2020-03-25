@@ -1,6 +1,6 @@
 body{
     font-family: "Bookman Old Style";
-    background: url(https://www.jakpost.travel/imgfiles/full/9/98034/hd-wallpaper-website.jpg) no-repeat center center fixed;
+    background: url(http://getwallpapers.com/wallpaper/full/c/f/5/457561.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -12,12 +12,36 @@ h1{
 h3{
     color: #626869;
 }
-.border-wrap {
-    max-width: content-box;
-    padding: 1rem;
+/*.border-wrap {*/
+/*    max-width: border-box;*/
+/*    padding: 1rem;*/
+/*    position: relative;*/
+/*    background: linear-gradient(to right, red, purple);*/
+/*    padding: 1px;*/
+/*}*/
+table{
+    border-collapse: collapse;
+
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+a{
+    box-shadow: 0 5px 0 darkred;
+    background-color: rgba(204, 0, 2, 0.64);
+    color: white;
+    padding: 3px 4px;
+    text-decoration: none;
     position: relative;
-    background: linear-gradient(to right, red, purple);
-    padding: 3px;
+    text-transform: uppercase;
+}
+a:hover {
+    background-color: #ce0606;
+    cursor: pointer;
+}
+a:active{
+    box-shadow: none;
 }
 
 
